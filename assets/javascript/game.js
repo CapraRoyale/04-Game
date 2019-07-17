@@ -3,22 +3,25 @@ $(document).ready(function() {
     // console.log("page loaded");
     var firstPlayer = false;
     var secondPlayer = false;
+    var flowers = ["rose", "hydrangea", "bush", "sunflower"];
     // Assign character's HP, Attack, Defense points
-
-    $(".hp").text(Math.floor(Math.random() * 10));
-    $(".attack").text(Math.floor(Math.random() * 10));
-    $(".defense").text(Math.floor(Math.random() * 10));
-    //User clicks character
-    if (firstPlayer === true || secondPlayer === true) {
-        null;
-    } else if (firstPlayer === false) {
+    var assignScores = function() {
+            for (let i = 0; i < flowers.length; i++) {
+                $(".hp").text(Math.floor(Math.random() * 10));
+                $(".attack").text(Math.floor(Math.random() * 10));
+                $(".defense").text(Math.floor(Math.random() * 10));
+            }
+        }
+        //User clicks character
+    if (firstPlayer === false) {
         $(".flower").click(function() {
             //Remaining characters moved to "Defender Zone"
             $(this).detach().appendTo(".colosseum>.arena1").attr("class", "align-items-end");
             console.log("clicked flower1");
             firstPlayer = true;
         });
-    } else {
+    }
+    if (secondPlayer === ) {
         $(".flower").click(function() {
             //Remaining characters moved to "Defender Zone"
             $(this).detach().appendTo(".colosseum>.arena2").attr("class", "align-items-end");
