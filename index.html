@@ -1,110 +1,76 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-us">
 
 <head>
-    <title>Title</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--Reset CSS
--->
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <!--Load Styles-->
+    <meta charset="UTF-8">
+    <title>Garden Wars</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Boot Strap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Game Logic -->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
-<body style="height:100%;">
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/javascript/game.js"></script>
-    <!--START-->
-
-    <div class="container-fluid" style="height: 100vh; overflow-y:auto;">
-        <div class="jumbotron" style="padding:0px">
-            <h1>Garden Wars</h1>
-        </div>
+<body>
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
-                <div class="row">
-                    <div class="col-fluid">
-                        <div class="card flower">
-                            <div class="card-body">
-                                <h5 class="card-title">rose</h5>
-                                <div class="card-body">
-                                    <div class="rose glow">
-                                        <img class="card-img-top img-fluid" src="assets/images/roses.png" alt="">
-                                        <div class="card-subtitle text-justify">
-                                            <a class="hp"></a>
-                                            <a class="attack"></a>
-                                            <a class="defense"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card flower">
-                            <div class="card-body">
-                                <h5 class="card-title">hydrangea</h5>
-                                <div class="card-body">
-                                    <div class="hydrangea glow">
-                                        <img class="card-img-top img-fluid" src="assets/images/hydrangeas.png" alt="">
-                                        <div class="card-subtitle text-justify">
-                                            <a class="hp"></a>
-                                            <a class="attack"></a>
-                                            <a class="defense"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card flower">
-                            <div class="card-body">
-                                <h5 class="card-title">bush</h5>
-                                <div class="card-body">
-                                    <div class="bush glow">
-                                        <img class="card-img-top img-fluid" src="assets/images/bush.png" alt="">
-                                        <div class="card-subtitle text-justify">
-                                            <a class="hp"></a>
-                                            <a class="attack"></a>
-                                            <a class="defense"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card flower">
-                            <div class="card-body">
-                                <h5 class="card-title">sunflower</h5>
-                                <div class="card-body">
-                                    <div class="sunflower glow">
-                                        <img class="card-img-top img-fluid" src="assets/images/sunflower.png" alt="">
-                                        <div class="card-subtitle text-justify">
-                                            <a class="hp"></a>
-                                            <a class="attack"></a>
-                                            <a class="defense"></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+            <div class="col">
+                <div class="main-section-title">
+                    <h1>Garden Wars</h1>
+                </div>
+
+                <!-- Start Main Game Section -->
+                <div id="main-game-section">
+                    <!-- Where the characters are initially available to be selected. -->
+                    <div id="characters-section">
+                        <div class="section-title">
+                            <h2>Pick Your Plant</h2>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-8">
-                <div class="row colosseum">
-                    <div class="col-6 arena1"></div>
-                    <div class="col-6 arena2"></div>
+            <div class="col">
+                <!-- Area for game messages. -->
+                <div id="game-message"></div>
+                <!-- Section for our selected character. -->
+                <div id="selected-character-section">
+                    <div class="section-title">
+                        <h5>Your Character</h5>
+                    </div>
+                    <!-- Where our selected character will appear. -->
+                    <div id="selected-character"></div>
+                </div>
+
+                <!-- Where our enemies available to attack will appear. -->
+                <div id="available-to-attack-section">
+                    <div class="section-title">
+                        <h6><i>Enemies Available To Attack</i></h6>
+                    </div>
+                </div>
+
+                <div class="section-title">
+                    <h5>Fight!</h5>
+                </div>
+                <div id="fight-section">
+                    <button id="attack-button">Attack</button>
+                </div>
+
+                <div id="action">
+                    <div class="character-section">
+                        <div class="section-title">
+                            <h4>Defender</h4>
+                        </div>
+                        <!-- Where our defender will appear. -->
+                        <div id="defender"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-
 </body>
 
 </html>
