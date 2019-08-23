@@ -1,76 +1,109 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
     <title>Garden Wars</title>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-    <!-- CSS -->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Google Fonts!-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <!--And now, our OWN style!-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Boot Strap -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Game Logic -->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Start Body of Page-->
+    <!--Mandatory Bootstrap 'container' div-->
+    <div class="jumbotron jumbotron-fluid" style="height: auto; padding-top: 5px; padding-bottom: 5px">
+        <!--Title, instructions, about-->
         <div class="row">
-            <div class="col">
-                <div class="main-section-title">
-                    <h1>Garden Wars</h1>
-                </div>
-
-                <!-- Start Main Game Section -->
-                <div id="main-game-section">
-                    <!-- Where the characters are initially available to be selected. -->
-                    <div id="characters-section">
-                        <div class="section-title">
-                            <h2>Pick Your Plant</h2>
-                        </div>
-                    </div>
-                </div>
+            <!--Here's the title, in it's own column that scales with the windows-->
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <h1 class="text-center display-3" style="margin-top:0.5em;">Garden Wars!</h1>
             </div>
-            <div class="col">
-                <!-- Area for game messages. -->
-                <div id="game-message"></div>
-                <!-- Section for our selected character. -->
-                <div id="selected-character-section">
-                    <div class="section-title">
-                        <h5>Your Character</h5>
-                    </div>
-                    <!-- Where our selected character will appear. -->
-                    <div id="selected-character"></div>
-                </div>
-
-                <!-- Where our enemies available to attack will appear. -->
-                <div id="available-to-attack-section">
-                    <div class="section-title">
-                        <h6><i>Enemies Available To Attack</i></h6>
-                    </div>
-                </div>
-
-                <div class="section-title">
-                    <h5>Fight!</h5>
-                </div>
-                <div id="fight-section">
-                    <button id="attack-button">Attack</button>
-                </div>
-
-                <div id="action">
-                    <div class="character-section">
-                        <div class="section-title">
-                            <h4>Defender</h4>
+            <!--Here we do a little 'divception'...-->
+            <!--First we make a column that sits nicely next to the title text-->
+            <div class="col-lg-6 col-md-6 col-sm-12 text-lg-left text-md-right text-sm-center text-xs-center">
+                <!--But inside this column is another row...-->
+                <div class="row">
+                    <!--...containing two more columns-->
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div class="card-body" style="padding-top:5px; padding-bottom:5px">
+                            <p class="lead text-md-left text-sm-left">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-4">
+                                        <div class="inline-block">1. Pick your plant</div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-4">
+                                        <div class="inline-block">2. Choose a challenger</div>
+                                    </div>
+                                    <div class="col-lg-12 col-md-12 col-sm-4">
+                                        <div class="inline-block">3. GROW!</div>
+                                    </div>
+                                </div>
+                            </p>
                         </div>
-                        <!-- Where our defender will appear. -->
-                        <div id="defender"></div>
+                    </div>
+                    <!--With their own sub-rules of engagement-->
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <!--And here we make rules for the text -->
+                        <hr class="text-lg-center text-md-right text-sm-left">
+                        <span class="card-body">What is this even
+                    <a class="" href="/help.html" role="button">about?</a>
+                </span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <!--And NOW to the page content-->
+    <div class="container mx-auto">
+        <!--First row contains callengers-->
+        <div class="row">
+            <!--But wait, there's more! Two empy column div's flank the center div-->
+            <div class="col-lg-2 col-md-1 col-sm-12"></div>
+            <!--And now for the Main Div! (with like, a LOT of rules)-->
+            <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 text-center">
+                <!--Aaaaaand inside this column div is ANOTHER row...-->
+                <div class="row">
+                    <!--...with 4 more columns, because I hate everything and I'm a control freak-->
+                    <div id="flower-bush" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/bush.png" class="flower img-fluid mx-auto" alt="">
+                            <div class="card-title">BUSH</div>
+                        </div>
+                    </div>
+                    <div id="flower-hydrangeas" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/hydrangeas.png" class="flower img-fluid mx-auto" alt="">
+                            <div class="card-title">HYDRANGEAS</div>
+                        </div>
+                    </div>
+                    <div id="flower-sunflower" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/sunflower.png" class="flower img-fluid mx-auto" alt="">
+                            <div class="card-title">SUNFLOWER</div>
+                        </div>
+                    </div>
+                    <div id="flower-roses" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/roses.png" class="flower img-fluid mx-auto" alt="">
+                            <div class="card-title">ROSES</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--See previous flank div-->
+            <div class="col-lg-2 col-md-1 col-sm-12"></div>
+        </div>
+    </div>
+
 </body>
 
 </html>
