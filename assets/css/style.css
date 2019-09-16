@@ -1,14 +1,25 @@
 body {
+     color:white;
     font-family: 'Roboto', sans-serif;
     font-family: 'Montserrat', sans-serif;
+    background: #222222;
+}
+
+.jumbotron{
+    background-color: #444;
 }
 
 h1 {
+    color:darkgrey;
     font-family: 'Roboto', sans-serif;
 }
 
-.flower:hover {
-    filter: drop-shadow(0px 0px 10px black);
+.flower.selectable:hover {
+    filter: drop-shadow(0px 0px 10px white);
+}
+
+.flower.selected {
+    filter: drop-shadow(0px 0px 10px red);
 }
 
 .sunflower {
