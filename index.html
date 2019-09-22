@@ -22,6 +22,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/javascript/newGame.js"></script>
     <!-- Start Body of Page-->
     <!--Mandatory Bootstrap 'container' div-->
     <div class="jumbotron jumbotron-fluid" style="height: auto; padding-top: 5px; padding-bottom: 5px">
@@ -74,8 +75,9 @@
             <!--And now for the Main Div! (with like, a LOT of rules)-->
             <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 text-center">
                 <!--Aaaaaand inside this column div is ANOTHER row...-->
-                <div class="row">
+                <div id="players" class="row">
                     <!--...with 4 more columns, because I hate everything and I'm a control freak-->
+<<<<<<< HEAD
 
                     <div id="flower-bush" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/bush.png" class="flower img-fluid mx-auto" alt="">
@@ -98,6 +100,26 @@
                     <div id="flower-roses" class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="card-body text-center" style="padding:0px; margin:0px;"><img src="assets/images/roses.png" class="flower img-fluid mx-auto" alt="">
                             <div class="align-bottom card-title">ROSES</div>
+=======
+                    <div id="bush" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/bush.png" class="flower img-fluid" alt="">
+                            <div class="card-title">BUSH</div>
+                        </div>
+                    </div>
+                    <div id="hydrangeas" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/hydrangeas.png" class="flower img-fluid" alt="">
+                            <div class="card-title">HYDRANGEAS</div>
+                        </div>
+                    </div>
+                    <div id="sunflower" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/sunflower.png" class="flower img-fluid" alt="">
+                            <div class="card-title">SUNFLOWER</div>
+                        </div>
+                    </div>
+                    <div id="roses" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/roses.png" class="flower img-fluid" alt="">
+                            <div class="card-title">ROSES</div>
+>>>>>>> fa03f9ed3f50322dcf63013639defd265a55c506
                         </div>
                     </div>
                 </div>
@@ -105,12 +127,49 @@
             <!--See previous flank div-->
             <div class="col-lg-2 col-md-1 col-sm-12"></div>
         </div>
+<<<<<<< HEAD
         <!--NEXT ROW-->
         <div class="row d-flex justify-content-center">
             <div class="col-lg-9 col-sm-12">
                 <div class="growOff"></div>
             </div>
         </div>
+=======
+      <!-- Create the ARENA for fight...ing? -->
+      <div class="row">
+        <!--But wait, there's more! Two empy column div's flank the center div-->
+        <div class="col-lg-2 col-md-1 col-sm-12"></div>
+        <!--And now for the Main Div! (with like, a LOT of rules)-->
+        <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 text-center">
+            <!--Aaaaaand inside this column div is ANOTHER row...-->
+            <div id="opponents" class="row">
+                <!--...with 4 more columns, because I hate everything and I'm a control freak-->
+                <div id="bush" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/bush.png" class="flower img-fluid" alt="">
+                        <div class="card-title">BUSH</div>
+                    </div>
+                </div>
+                <div id="hydrangeas" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/hydrangeas.png" class="flower img-fluid" alt="">
+                        <div class="card-title">HYDRANGEAS</div>
+                    </div>
+                </div>
+                <div id="sunflower" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/sunflower.png" class="flower img-fluid" alt="">
+                        <div class="card-title">SUNFLOWER</div>
+                    </div>
+                </div>
+                <div id="roses" class="align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="card-body" style="padding:0px; margin:0px;"><img src="assets/images/roses.png" class="flower img-fluid" alt="">
+                        <div class="card-title">ROSES</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--See previous flank div-->
+        <div class="col-lg-2 col-md-1 col-sm-12"></div>
+    </div>
+>>>>>>> fa03f9ed3f50322dcf63013639defd265a55c506
     </div>
 
 </body>

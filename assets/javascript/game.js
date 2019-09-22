@@ -53,10 +53,10 @@ $(document).ready(function() {
     // The character rendered, the area they are rendered to, and their status is determined by the arguments passed in.
     var renderCharacter = function(character, renderArea) {
         // This block of code builds the character card, and renders it to the page.
-        var charDiv = $("<div class='character' data-name='" + character.name + "'>");
-        var charName = $("<div class='character-name'>").text(character.name);
-        var charImage = $("<img alt='image' class='character-image'>").attr("src", character.imageUrl);
-        var charHealth = $("<div class='character-health'>").text(character.health);
+        var charDiv = $("<div class='align-self-center col-lg-3 col-md-3 col-sm-6 col-xs-12' data-name='" + character.name + "'>");
+        var charName = $("<div class='card-title' style='padding:0px; margin:0px;'>").text(character.name);
+        var charImage = $("<img alt='image' class='character-image img-fluid'>").attr("src", character.imageUrl);
+        var charHealth = $("<div class='card-text character-health'>").text(character.health);
         charDiv.append(charName).append(charImage).append(charHealth);
         $(renderArea).append(charDiv);
     };
