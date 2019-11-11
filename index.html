@@ -17,15 +17,16 @@
 <body>
     <div class="container">
         <div class="jumbotron text-center border-warning"><h1>Garden Wars!</h1></div>
-        <div class="row m-2 border border-success" id="chooseAPlayer">Players!</div>
-        <div class="row m-2 border border-danger" id="chooseAnOpponent">Opponents!</div>
-        <div class="row m-2 border border-warning" id="growArena">
+        <div class="row m-2 p-2 border rounded border-success" id="chooseAPlayer">Players!</div>
+        <div class="row m-2 p-2 border rounded border-danger" id="chooseAnOpponent">Opponents!</div>
+        <div class="row m-2 p-2 border rounded border-warning" id="growArena">
             <div class="col" id="attacker">Attacker!</div>
-            <div class="btn m-1 btn-primary btn-lg" id="grow">GROW!</div>
+            <div class="btn m-1 btn-primary btn-lg rounded" id="grow">GROW!</div>
+            <div class="btn m-1 btn-danger btn-lg rounded" id="restart">RESTART!</div>
             <div class="col" id="opponent">Opponent!</div>
         </div>
-        <div class="row m-2 border border-primary" id="gameMessage"></div>
-        <div class="row m-2 border border-danger">Compost!</div>
+        <div class="row m-2 p-2 border rounded border-primary" id="gameMessage"></div>
+        <div class="row m-2 p-2 border rounded border-danger">Compost!</div>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

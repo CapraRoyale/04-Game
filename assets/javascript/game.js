@@ -40,6 +40,12 @@ $(document).ready(function () {
     var turnCounter = 1;
     // Tracks number of defeated opponents.
     var killCount = 0;
+    //
+
+    $("#restart").click(function () {
+        location.reload();
+    });
+    //
 
 
     var renderCharacter = function (character, renderArea) {
@@ -47,7 +53,7 @@ $(document).ready(function () {
         var colDiv = $("<div>").attr("class", "col text-center");
         var charDiv = $("<div class='character align-self-center' id='" + character.name + "'>");
         var charText = $("<div class='card-title'>").text(character.name + " | " + character.health);
-        var charImage = $("<img class='character-image flower img-fluid'>").attr("alt", character.name).attr("src", character.imageUrl);
+        var charImage = $("<img class='character-image flower rounded-circle img-fluid'>").attr("alt", character.name).attr("src", character.imageUrl);
         // Attach image and then text to the div
         charDiv.append(charImage).append(charText);
         //attach div to column div
@@ -58,6 +64,7 @@ $(document).ready(function () {
 
     // this function will load all the characters into the character section to be selected
     var initializeGame = function () {
+        $("#restart").hide();
         $("#chooseAPlayer").empty();
         // Loop through the characters object and call the renderCharacter function on each character to render their card.
         for (var key in characters) {
@@ -99,16 +106,12 @@ $(document).ready(function () {
     // Function which handles restarting the game after victory or defeat.
     var restartGame = function (resultMessage) {
         // When the 'Restart' button is clicked, reload the page.
-        var restart = $("<button>Restart</button>").click(function () {
-            location.reload();
-        });
-
-        // Build div that will display the victory/defeat message.
-        var gameState = $("<div>").text(resultMessage);
-
+        // var gameState = $("<div>").text(resultMessage);
+        $("#grow").hide();
+        $("#restart").show();
+        renderMessage(resultMessage);
         // Render the restart button and victory/defeat message to the page.
-        $("body").append(gameState);
-        $("body").append(restart);
+        // $("body").append(gameState);
     };
 
     // Function to clear the game message section
@@ -140,7 +143,7 @@ $(document).ready(function () {
             // Then render our selected character and our combatants.
             updateCharacter(attacker, "#attacker");
             renderEnemies(combatants);
-            
+
         }
 
     });
@@ -192,7 +195,7 @@ $(document).ready(function () {
                 // We call the restartGame function to allow the user to restart the game and play again.
                 if (attacker.health <= 0) {
                     clearMessage();
-                    restartGame("You have been defeated...GAME OVER!!!");
+                    restartGame("You have been outgrown... Round Over!");
                     $("#attack-button").off("click");
                 }
             } else {
@@ -200,7 +203,7 @@ $(document).ready(function () {
                 // Remove your opponent's character card.
                 $("#opponent").empty();
 
-                var gameStateMessage = "You have defeated " + defender.name + ", you can choose to fight another enemy.";
+                var gameStateMessage = "You have outgrown " + defender.name + ", choose another plant to fight.";
                 renderMessage(gameStateMessage);
 
                 // Increment your kill count.
@@ -219,7 +222,7 @@ $(document).ready(function () {
         } else {
             // If there is no defender, render an error message.
             clearMessage();
-            renderMessage("No enemy here.");
+            renderMessage("No plant to fight, pick another above!");
         }
     });
 });
